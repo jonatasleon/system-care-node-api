@@ -1,0 +1,34 @@
+{
+  "name": "system-care-node-api",
+  "version": "1.0.0",
+  "description": "API para monitoramento cardiaco",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonatasleon/system-care-node-api.git"
+  },
+  "author": "Jonatas Leon && Sofia Lunkes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonatasleon/system-care-node-api/issues"
+  },
+  "homepage": "https://github.com/jonatasleon/system-care-node-api#readme",
+  "dependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-preset-es2015": "^6.5.0",
+    "bcrypt": "^0.8.5",
+    "body-parser": "^1.15.0",
+    "consign": "^0.1.2",
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "helmet": "^1.1.0",
+    "jwt-simple": "^0.4.1",
+    "mysql2": "^1.1.2",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.0.0",
+    "sequelize": "^3.19.2"
+  }
+}
