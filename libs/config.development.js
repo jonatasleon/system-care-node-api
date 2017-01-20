@@ -4,7 +4,7 @@ module.exports = {
   password:"root",
   params:{
     dialect :"mysql",
-    define{
+    define : {
       underscored:true
     }
   },
