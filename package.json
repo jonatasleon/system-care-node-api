@@ -4,7 +4,8 @@
   "description": "API para monitoramento cardiaco",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"npm run clusters",
+    "clusters": "babel-node clusters.js"
   },
   "repository": {
     "type": "git",
