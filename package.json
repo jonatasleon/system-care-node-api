@@ -4,8 +4,10 @@
   "description": "API para monitoramento cardiaco",
   "main": "index.js",
   "scripts": {
-    "start":"npm run clusters",
-    "clusters": "babel-node clusters.js"
+    "start": "npm run clusters",
+    "clusters": "babel-node clusters.js",
+    "lint": "eslint '**/*.js'",
+    "lint:fix": "eslint '**/*.js' --fix"
   },
   "repository": {
     "type": "git",
@@ -31,5 +33,12 @@
     "passport": "^0.3.2",
     "passport-jwt": "^2.0.0",
     "sequelize": "^3.19.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.13.1",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0"
   }
 }
