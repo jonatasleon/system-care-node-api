@@ -4,6 +4,11 @@
 //patient_id
 export default (sequelize, DataType) => {
   const Heartbeats = sequelize.define('Heartbeats', {
+    id: {
+      type: DataType.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     heartbeatValue: {
       type: DataType.DOUBLE,
       allowNull : false,
