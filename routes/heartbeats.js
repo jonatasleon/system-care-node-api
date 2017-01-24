@@ -6,7 +6,7 @@ module.exports = app =>{
 	.get((req, res) => {
 		Heartbeats.findOne({
 			where : {
-				patient_id : req.patient.id
+				patient_id : req.user.id
 			}})
 		.then((result) => {
 			if(result){
@@ -21,7 +21,7 @@ module.exports = app =>{
 	})
 
   .post((req, res) => {
-    req.body.patient_id = req.patient.id;
+    req.body.patient_id = req.user.id;
     Heartbeats.create(req.body)
       .then((result) => {res.json(result)})
       .catch((error) => {
@@ -33,7 +33,7 @@ module.exports = app =>{
 		Heartbeats.destroy({
 			where : {
 				id : req.params.id ,
-				patient_id : req.patient.id
+				patient_id : req.user.id
 			}})
 		.then(result => res.sendStatus(204))
 		.catch(error => {
