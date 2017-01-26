@@ -38,6 +38,7 @@ export default (sequelize, DataType) => {
     },
     classMethods: {
       associate: (models) => {
+        Patients.belongsTo(models.Doctors);
         Patients.hasMany(models.Heartbeats);
       },
       isPassword: (encodedPassword, password) => bcrypt.compareSync(password, encodedPassword),
