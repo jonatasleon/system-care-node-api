@@ -1,7 +1,7 @@
 // TODO: inserir as colunas que serão os pontos de batimento do pacient
-//heartbeatValue
-//time
-//patient_id
+// heartbeatValue
+// time
+// patient_id
 export default (sequelize, DataType) => {
   const Heartbeats = sequelize.define('Heartbeats', {
     id: {
@@ -11,14 +11,14 @@ export default (sequelize, DataType) => {
     },
     heartbeatValue: {
       type: DataType.DOUBLE,
-      allowNull : false,
-      validate : {
-        notEmpty :true
-      }
-    }
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
   }, {
-    classMethods : {
-      associate: models => {
+    classMethods: {
+      associate: (models) => {
         Heartbeats.belongsTo(models.Patients);
       }
     }
