@@ -20,8 +20,8 @@ export default (sequelize, DataType) => {
     classMethods: {
       associate: (models) => {
         Heartbeats.belongsTo(models.Patients);
-      }
-    }
+      },
+    },
   });
   return Heartbeats;
 };
