@@ -1,5 +1,5 @@
 module.exports = (app) => {
-  app.get('/', (req, res) => {
+  app.get('/api', (req, res) => {
     res.json({ status: 'System Care API' });
   });
 };

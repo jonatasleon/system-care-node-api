@@ -1,7 +1,7 @@
 module.exports = (app) => {
   const Patients = app.db.models.Patients;
 
-  app.route('/patient')
+  app.route('/api/patient')
   .all(app.auth.authenticate())
   .get((req, res) => {
     Patients.findById(req.user.id, {

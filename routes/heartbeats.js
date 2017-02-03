@@ -1,7 +1,7 @@
 module.exports = (app) => {
   const Heartbeats = app.db.models.Heartbeats;
 
-  app.route('/heartbeats/:id')
+  app.route('/api/heartbeats/:id')
 	.all(app.auth.authenticate())
 	.get((req, res) => {
   Heartbeats.findOne({
