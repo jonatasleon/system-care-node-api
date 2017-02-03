@@ -1,0 +1,21 @@
+{
+  "name": "system-care-node-api",
+  "description": "API para monitoramento cardiaco",
+  "main": "public/app.js",
+  "authors": [
+    "Jonatas Leon && Sofia Lunkes"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jonatasleon/system-care-node-api",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootswatch-dist": "flatly"
+  }
+}
