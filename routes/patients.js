@@ -21,7 +21,7 @@ module.exports = (app) => {
       res.status(412).json({ msg: error.message });
     });
   });
-  app.post('/patients', (req, res) => {
+  app.post('api/patients', (req, res) => {
     Patients.create(req.body)
     .then(result => res.json(result))
     .catch((error) => {

@@ -1,9 +1,4 @@
-import express from 'express';
-import HeartbeatsController from '../controller/heartbeats';
-
-
 module.exports = (app) => {
-  const heartbeatsController =  new HeartbeatsController();
   app.route('api/heartbeats/:id')
 	.all(app.auth.authenticate())
 	.get((req, res) => {
