@@ -1,5 +1,6 @@
 import bodyParser from 'body-parser';
 import express from 'express';
+import path from 'path';
 // import cors from 'cors';
 import helmet from 'helmet';
 
@@ -18,7 +19,7 @@ module.exports = (app) => {
 
   app.use(bodyParser.json());
   app.use(app.auth.initialize());
-  app.use(express.static(path.join(__dirname, 'public')));
+  app.use('/', express.static('public'));
   app.use((req, res, next) => {
     delete req.body.id;
     next();
