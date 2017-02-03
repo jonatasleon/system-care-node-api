@@ -1,13 +1,16 @@
-module.exports = (app) => {
-  const Heartbeats = app.db.models.Heartbeats;
+import express from 'express';
+import HeartbeatsController from '../controller/heartbeats';
 
+
+module.exports = (app) => {
+  const heartbeatsController =  new HeartbeatsController();
   app.route('/heartbeats/:id')
 	.all(app.auth.authenticate())
 	.get((req, res) => {
   Heartbeats.findAll({
     where: {
       patient_id: req.user.id
-      //,$between: [,] //TODO INSERIR DATAS PARA PEGAR OS BATIMENTOS CARDIACOS
+      ,$between: [,] //TODO INSERIR DATAS PARA PEGAR OS BATIMENTOS CARDIACOS
     } })
 		.then((result) => {
       if (result) {
