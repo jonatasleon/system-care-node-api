@@ -18,7 +18,7 @@ module.exports = (app) => {
 
   app.use(bodyParser.json());
   app.use(app.auth.initialize());
-  app.use(express.static(path.join(__dirname, 'app_client')));
+  app.use(express.static(path.join(__dirname, 'public')));
   app.use((req, res, next) => {
     delete req.body.id;
     next();
