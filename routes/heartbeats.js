@@ -4,22 +4,22 @@ module.exports = (app) => {
   app.route('/heartbeats/:id')
 	.all(app.auth.authenticate())
 	.get((req, res) => {
-  Heartbeats.findOne({
+  Heartbeats.findAll({
     where: {
-      patient_id: req.user.id,
+      patient_id: req.user.id
+      //,$between: [,] //TODO INSERIR DATAS PARA PEGAR OS BATIMENTOS CARDIACOS
     } })
 		.then((result) => {
-  if (result) {
-    res.json(result);
-  } else {
-    res.sendStatus(404);
-  }
-})
+      if (result) {
+        res.json(result);
+      } else {
+        res.sendStatus(404);
+      }
+    })
 		.catch((error) => {
-  res.status(412).json({ msg: error.message });
-});
-})
-
+      res.status(412).json({ msg: error.message });
+    });
+  })
   .post((req, res) => {
     req.body.patient_id = req.user.id;
     Heartbeats.create(req.body)
@@ -27,17 +27,5 @@ module.exports = (app) => {
       .catch((error) => {
         res.status(412).json({ msg: error.message });
       });
-  })
-
-	.delete((req, res) => {
-  Heartbeats.destroy({
-    where: {
-      id: req.params.id,
-      patient_id: req.user.id,
-    } })
-		.then(result => res.sendStatus(204))
-		.catch((error) => {
-  res.status(412).json({ msg: error.message });
-});
-});
+  });
 };
