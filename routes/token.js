@@ -4,7 +4,7 @@ module.exports = (app) => {
   const cfg = app.libs.config;
   const Users = app.db.models.Users;
 
-  app.post('/token', (req, res) => {
+  app.post('api/token', (req, res) => {
     if (req.body.email && req.body.password) {
       const email = req.body.email;
       const password = req.body.password;

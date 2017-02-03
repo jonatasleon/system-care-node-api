@@ -30,12 +30,6 @@ export default (sequelize, DataType) => {
       },
     },
   }, {
-    hooks: {
-      beforeCreate: (patient) => {
-        const salt = bcrypt.genSaltSync();
-        patient.password = bcrypt.hashSync(patient.password, salt);
-      },
-    },
     classMethods: {
       associate: (models) => {
         Patients.belongsTo(models.Doctors);

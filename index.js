@@ -8,7 +8,7 @@ consign({ verbose: false })
   .then('db.js')
   .then('auth.js')
   .then('libs/middlewares.js')
-  // .then("routes")
+  .then("routes")
   .then('libs/boot.js')
   .into(app);
 
